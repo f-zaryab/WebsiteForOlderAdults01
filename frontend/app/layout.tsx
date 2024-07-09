@@ -3,6 +3,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { useState } from "react";
+import ColorPicker from "@/components/color-picker";
+import { themeOptions } from "@/lib/constants";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -19,25 +21,29 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [themeColor, setThemeColor] = useState<string>(themes[0]);
+  const [themeColor, setThemeColor] = useState<string>(themeOptions[0]);
+
+  const handleThemeChange = (newTheme: string) => {
+    setThemeColor(newTheme);
+  };
 
   return (
     <html lang="en">
       <body className={`${inter.className} ${themeColor}`}>
         <>
-          <div className="flex gap-1 justify-normal align-middle">
-            <h1>Header</h1>
-            <h2>Logo</h2>
-            <div>
-              <h1>Theme Selctor</h1>
-              {themes.map((t) => (
-                <p key={t} onClick={() => setThemeColor(t)}>
-                  {t}
-                </p>
-              ))}
-            </div>
+          {/* Theme Picker */}
+          <div>
+            <ColorPicker
+              themeSelected={themeColor}
+              themeChange={handleThemeChange}
+            />
           </div>
-          {children}
+          {/* Navbar */}
+          <div className="flex gap-1 justify-normal align-middle top-[5.5rem] fixed border-solid border-2 border-indigo-600 w-full bg-slate-300">
+            <h1>Navbar here</h1>
+          </div>
+          {/* Children */}
+          <div className="mt-32">{children}</div>
         </>
       </body>
     </html>
