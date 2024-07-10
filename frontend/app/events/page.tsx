@@ -1,11 +1,12 @@
 import React from "react";
 
-const About = () => {
+const Event = () => {
   return (
     <div className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1>About Page</h1>
+      <div>side Filters</div>
+      <div>events listed here</div>
     </div>
   );
 };
 
-export default About;
+export default Event;

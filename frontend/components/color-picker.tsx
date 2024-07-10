@@ -15,13 +15,13 @@ const ColorPicker = ({ themeSelected, themeChange }: ColorPickerProps) => {
   };
 
   return (
-    <section className="bg-slate-500 w-full py-2 fixed top-0">
-      <div className="max-w-screen-lg mx-auto">
-        <h2 className="mb-4 mt-2 text-white">Theme Selection</h2>
+    <section className="bg-slate-500 w-full py-2 fixed top-0 z-20">
+      <div className="max-w-screen-lg mx-auto flex gap-4 align-middle my-4">
+        <h2 className="text-white">Theme Selection</h2>
         <RadioGroup
           defaultValue={themeSelected}
           onValueChange={handleOptionsChange}
-          className="mt-4 mb-2 flex gap-4"
+          className="flex gap-4"
         >
           {themeOptions.map((option) => (
             <div className="flex items-center space-x-2" key={option}>

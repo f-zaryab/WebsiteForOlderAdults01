@@ -13,6 +13,8 @@
 1. [Shadcn/ui - Button](https://ui.shadcn.com/docs/components/button): npx shadcn-ui@latest add button
 2. [Shadcn/ui - Label](https://ui.shadcn.com/docs/components/label): npx shadcn-ui@latest add label
 3. [Shadcn/ui - RadioGroup](https://ui.shadcn.com/docs/components/radio-group): npx shadcn-ui@latest add radio-group
+4. [Shadcn/ui - NavigationMenu](https://ui.shadcn.com/docs/components/navigation-menu): npx shadcn-ui@latest add navigation-menu
+5. [Shadcn/ui - Tooltip](https://ui.shadcn.com/docs/components/tooltip): npx shadcn-ui@latest add tooltip
 
 ### Other References
 

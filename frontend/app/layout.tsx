@@ -4,6 +4,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { useState } from "react";
 import ColorPicker from "@/components/color-picker";
+import NavMenu from "@/components/navigation-menu";
+import Footer from "@/components/footer";
 import { themeOptions } from "@/lib/constants";
 import "./globals.css";
 
@@ -31,19 +33,26 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} ${themeColor}`}>
         <>
-          {/* Theme Picker */}
-          <div>
+          {/* ------------------------ Theme Picker -------------------------*/}
+          <div className="z-20">
             <ColorPicker
               themeSelected={themeColor}
               themeChange={handleThemeChange}
             />
           </div>
-          {/* Navbar */}
-          <div className="flex gap-1 justify-normal align-middle top-[5.5rem] fixed border-solid border-2 border-indigo-600 w-full bg-slate-300">
-            <h1>Navbar here</h1>
+
+          {/* --------------------------- Navbar ---------------------------- */}
+          <div className="top-[4.5rem] fixed border-solid border-2 border-indigo-600 w-full bg-indigo-500 z-20">
+            <NavMenu />
           </div>
-          {/* Children */}
+
+          {/* --------------------------- Children -------------------------- */}
           <div className="mt-32">{children}</div>
+
+          {/* ---------------------------- Footer --------------------------- */}
+          <div className="w-full bg-stone-700">
+            <Footer />
+          </div>
         </>
       </body>
     </html>
