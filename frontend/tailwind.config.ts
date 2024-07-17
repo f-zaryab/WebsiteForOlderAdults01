@@ -17,6 +17,48 @@ const config = {
         "2xl": "1400px",
       },
     },
+    fontSize: {
+      base: [
+        "1.125em",
+        {
+          lineHeight: "1.5em",
+          letterSpacing: "0em",
+          fontWeight: "500",
+        },
+      ],
+      lrg: [
+        "1.5em",
+        {
+          lineHeight: "1.75em",
+          letterSpacing: "0em",
+          fontWeight: "600",
+        },
+      ],
+      "1xl": [
+        "1.75em",
+        {
+          lineHeight: "2em",
+          letterSpacing: "0em",
+          fontWeight: "600",
+        },
+      ],
+      "2xl": [
+        "2em",
+        {
+          lineHeight: "2.25em",
+          letterSpacing: "0em",
+          fontWeight: "800",
+        },
+      ],
+      "3xl": [
+        "2.25em",
+        {
+          lineHeight: "2.5em",
+          letterSpacing: "0em",
+          fontWeight: "900",
+        },
+      ],
+    },
     extend: {
       colors: {
         border: "hsl(var(--border))",
@@ -24,6 +66,13 @@ const config = {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        themeBG: "hsl(var(--themeSelection))",
+        navFooterBG: "hsl(var(--navbarFooterBG))",
+        pageBG: "hsl(var(--pageBG))",
+        myPrimary: "hsl(var(--myPrimary))",
+        myInversePrimary: "hsl(var(--myInversePrimary))",
+        pillPrimary: "hsl(var(--pillPrimary))",
+        pillInversePrimary: "hsl(var(--pillInversePrimary))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -87,10 +136,16 @@ const config = {
       screens: {
         xs: "360px",
         sm: "600px",
+        sml: "705px",
         md: "900px",
+        mdl: "1200px",
         lg: "1440px",
         xl: "1530px",
         xxl: "1900px",
+      },
+      fontFamily: {
+        sans: ["var(--font-opensans)"],
+        mono: ["var(--font-roboto-mono)"],
       },
     },
   },

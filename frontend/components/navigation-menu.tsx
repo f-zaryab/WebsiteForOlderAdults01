@@ -26,19 +26,13 @@ const NavMenu = () => {
       <div>
         <NavigationMenu>
           <NavigationMenuList className="gap-4">
-            <NavigationMenuItem>
-              <NavigationMenuTrigger>Item One</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <NavigationMenuLink>Link</NavigationMenuLink>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-            {/* second link */}
-            <NavigationMenuItem>
+            {/* second link -- to be activated later */}
+            {/* <NavigationMenuItem>
               <NavigationMenuTrigger>Item Two</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <NavigationMenuLink>Link 2</NavigationMenuLink>
               </NavigationMenuContent>
-            </NavigationMenuItem>
+            </NavigationMenuItem> */}
 
             {navLinks.map((item) => (
               <NavigationMenuItem key={item.id}>

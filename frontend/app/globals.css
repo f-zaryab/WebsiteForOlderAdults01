@@ -33,9 +33,12 @@
     --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
+
+    --themeSelection: 7 81.9% 43.3%;
+    --navbarFooterBG: 7 81.9% 43.3%;
   }
 
-  .dark {
+  /* .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
 
@@ -63,55 +66,39 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
-  }
 
-  .orange {
-    --background: 29 100% 52%; 
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 21.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-  }
+    --themeSelection: 34.3 5.8% 23.7%;
+  } */
 
   * {
-    font-size: 16px;
+    scroll-behavior: smooth;
     @apply border-border;
     @apply transition-colors duration-500 ease-in-out;
   }
 
   body {
     line-height: 1.5;
-    @apply bg-background text-foreground text-left;
+    @apply bg-pageBG text-foreground text-left;
   }
 
   h1 {
-    @apply text-lg text-orange-500 w-full;
+    @apply text-3xl;
   }
 
   h2 {
-    @apply text-base text-red-600;
+    @apply text-2xl;
+  }
+
+  h3 {
+    @apply text-1xl;
+  }
+
+  h4 {
+    @apply text-lrg;
+  }
+
+  p {
+    @apply text-base;
   }
 
   .center-page-alignment {
@@ -123,6 +110,162 @@
   }
 }
 
-/* @layer base {
+.grey {
+  --background: 210 16% 93%;
+  --foreground: 210 40% 98%;
 
-} */
+  --card: 222.2 84% 4.9%;
+  --card-foreground: 210 40% 98%;
+
+  --popover: 222.2 84% 4.9%;
+  --popover-foreground: 210 40% 98%;
+
+  --primary: 40 4% 14%;
+  --primary-foreground: 222.2 47.4% 11.2%;
+
+  --secondary: 217.2 32.6% 17.5%;
+  --secondary-foreground: 210 40% 98%;
+
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+
+  --accent: 21.2 32.6% 17.5%;
+  --accent-foreground: 210 40% 98%;
+
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 212.7 26.8% 83.9%;
+
+  --themeSelection: 208 7% 46%;
+  --navbarFooterBG: 210 9% 31%;
+  --pageBG: 210 17% 98%;
+
+  --myPrimary: 210 16% 93%;
+  --myInversePrimary: 210 10% 23%;
+
+  --pillPrimary: 210 10% 23%;
+  --pillInversePrimary: 210 17% 98%;
+}
+
+.brown {
+  --background: 60 10% 92%;
+  --foreground: 210 40% 98%;
+
+  --card: 222.2 84% 4.9%;
+  --card-foreground: 210 40% 98%;
+
+  --popover: 222.2 84% 4.9%;
+  --popover-foreground: 210 40% 98%;
+
+  --primary: 40 4% 14%;
+  --primary-foreground: 222.2 47.4% 11.2%;
+
+  --secondary: 217.2 32.6% 17.5%;
+  --secondary-foreground: 210 40% 98%;
+
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+
+  --accent: 21.2 32.6% 17.5%;
+  --accent-foreground: 210 40% 98%;
+
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 212.7 26.8% 83.9%;
+
+  --themeSelection: 26 31% 84%;
+  --navbarFooterBG: 22 31% 76%;
+  --pageBG: 31 51% 92%;
+
+  --myPrimary: 60 10% 92%;
+  --myInversePrimary: 22 31% 76%;
+
+  --pillPrimary: 28 26% 59%;
+  --pillInversePrimary: 210 17% 98%;
+}
+
+.green {
+  --background: 180 31% 94%;
+  --foreground: 210 40% 98%;
+
+  --card: 222.2 84% 4.9%;
+  --card-foreground: 210 40% 98%;
+
+  --popover: 222.2 84% 4.9%;
+  --popover-foreground: 210 40% 98%;
+
+  --primary: 40 4% 14%;
+  --primary-foreground: 222.2 47.4% 11.2%;
+
+  --secondary: 217.2 32.6% 17.5%;
+  --secondary-foreground: 210 40% 98%;
+
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+
+  --accent: 21.2 32.6% 17.5%;
+  --accent-foreground: 210 40% 98%;
+
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 212.7 26.8% 83.9%;
+
+  --themeSelection: 167 29% 85%;
+  --navbarFooterBG: 147 21% 70%;
+  --pageBG: 133 100% 98%;
+
+  --myPrimary: 180 31% 94%;
+  --myInversePrimary: 154 15% 49%;
+
+  --pillPrimary: 154 15% 49%;
+  --pillInversePrimary: 133 100% 98%;
+}
+
+.blue {
+  --background: 189 75% 75%;
+  --foreground: 210 40% 98%;
+
+  --card: 222.2 84% 4.9%;
+  --card-foreground: 210 40% 98%;
+
+  --popover: 222.2 84% 4.9%;
+  --popover-foreground: 210 40% 98%;
+
+  --primary: 40 4% 14%;
+  --primary-foreground: 222.2 47.4% 11.2%;
+
+  --secondary: 217.2 32.6% 17.5%;
+  --secondary-foreground: 210 40% 98%;
+
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+
+  --accent: 21.2 32.6% 17.5%;
+  --accent-foreground: 210 40% 98%;
+
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 212.7 26.8% 83.9%;
+
+  --themeSelection: 190 77% 88%;
+  --navbarFooterBG: 190 100% 42%;
+  --pageBG: 190 74% 94%;
+
+  --myPrimary: 189 75% 75%;
+  --myInversePrimary: 194 100% 40%;
+
+  --pillPrimary: 190 100% 42%;
+  --pillInversePrimary: 190 74% 94%;
+}

@@ -4,9 +4,9 @@ import Link from "next/link";
 
 const HeroBanner = () => {
   return (
-    <section className="relative h-full z-0">
+    <section className="relative h-full w-full z-0">
       <div>
-        <div>
+        <div className="h-[30rem]">
           <Image
             src={"/heroBanner01.jpg"}
             alt="travel-image"
@@ -16,12 +16,12 @@ const HeroBanner = () => {
             style={{ width: "100%", height: "100%" }}
           />
         </div>
-        <div className="absolute top-16 md:top-32 right-16 md:right-32 w-64 h-96 p-8 border-solid border-8 border-sky-500 bg-slate-100 rounded-lg">
+        <div className="absolute top-16 md:top-16 right-16 md:right-32 w-64 h-96 p-8 border-solid border-8 border-sky-500 bg-slate-100 rounded-md">
           Form here
         </div>
       </div>
-      <div className="absolute bottom-4 flex justify-start md:justify-center w-full">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="hidden">
+        <div className="flex justify-center items-center gap-4">
           <div className="w-full md:w-40 h-40 bg-red-500 p-4">
             <Link href="/events" className="w-full h-full flex items-end">
               <p className="text-lg font-bold">Popular Events</p>

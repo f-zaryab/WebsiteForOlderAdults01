@@ -2,6 +2,7 @@ import React from "react";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { themeOptions } from "@/lib/constants";
+import TooltipWrapper from "./tooltip-wrapper";
 
 interface ColorPickerProps {
   themeSelected: string;
@@ -15,23 +16,27 @@ const ColorPicker = ({ themeSelected, themeChange }: ColorPickerProps) => {
   };
 
   return (
-    <section className="bg-slate-500 w-full py-2 fixed top-0 z-20">
-      <div className="max-w-screen-lg mx-auto flex gap-4 align-middle my-4">
-        <h2 className="text-white">Theme Selection</h2>
-        <RadioGroup
-          defaultValue={themeSelected}
-          onValueChange={handleOptionsChange}
-          className="flex gap-4"
-        >
-          {themeOptions.map((option) => (
-            <div className="flex items-center space-x-2" key={option}>
-              <RadioGroupItem value={option} id={option} />
-              <Label htmlFor={option}>{option}</Label>
-            </div>
-          ))}
-        </RadioGroup>
-      </div>
-    </section>
+    <div className="center-component-alignment gap-0 md:gap-2 lg:gap-8">
+      <h4 className="text-black text-[1em] lg:text-lrg">
+        <TooltipWrapper tooltipMsg="You can change colors/theme on website by selection on of the radio buttons on right">
+          Theme Selection:
+        </TooltipWrapper>
+      </h4>
+      <RadioGroup
+        defaultValue={themeSelected}
+        onValueChange={handleOptionsChange}
+        className="flex gap-4 flex-wrap md:flex-nowrap"
+      >
+        {themeOptions.map((option) => (
+          <div className="flex  items-center space-x-2" key={option}>
+            <RadioGroupItem value={option} id={option} />
+            <Label htmlFor={option} className="text-black">
+              {option}
+            </Label>
+          </div>
+        ))}
+      </RadioGroup>
+    </div>
   );
 };
 
