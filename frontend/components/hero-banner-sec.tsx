@@ -1,10 +1,11 @@
 import React from "react";
 import Image from "next/image";
+import CategoriesButton from "@/components/categories-button";
 import SearchBoxHeroBanner from "./search-herobanner";
 import SearchBadge from "./seach-badge";
 import { popularSearchOptions } from "@/lib/constants";
 
-const HeroBannerSecond = () => {
+const HeroBannerSecond = async () => {
   return (
     <section className="absolute top-0 left-0 w-full h-full z-0">
       <div className="h-full w-full center-component-alignment flex flex-col justify-center items-center">
@@ -29,6 +30,8 @@ const HeroBannerSecond = () => {
           </div>
         </div>
       </div>
+
+      {/* ------------------------- BG Image -------------------------- */}
       <div className="absolute top-0 left-0 w-full h-full -z-10">
         <Image
           src={"/herobanner04.jpg"}

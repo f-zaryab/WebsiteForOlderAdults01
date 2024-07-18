@@ -1,11 +1,18 @@
-import React from "react";
+import React, { Suspense } from "react";
+import EventsList from "@/components/events-list";
 
-const Event = () => {
+interface EventPageProps {
+  searchParams: string;
+}
+
+const Event = async ({ searchParams }: EventPageProps) => {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div>side Filters</div>
-      <div>events listed here</div>
-    </div>
+    <main className="flex min-h-[80vh] items-center justify-between p-24 relative">
+      <div>Side filters</div>
+      <Suspense>
+        <EventsList searchPar={searchParams} />
+      </Suspense>
+    </main>
   );
 };
 

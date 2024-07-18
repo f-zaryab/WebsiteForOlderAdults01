@@ -8,8 +8,8 @@ import NavMenu from "@/components/navigation-menu";
 import Footer from "@/components/footer";
 import { themeOptions } from "@/lib/constants";
 import SizePicker from "@/components/size-picker";
-import CategoriesButton from "@/components/categories-button";
-import { eventCategories } from "@/lib/constants";
+// import CategoriesButton from "@/components/categories-button";
+// import { eventCategories } from "@/lib/constants";
 
 // ----------------- FONTS ------------------------//
 const inter = Inter({ subsets: ["latin"] });
@@ -72,7 +72,7 @@ export default function RootLayout({
           <div className="mt-32">{children}</div>
 
           {/*  */}
-          <section
+          {/* <section
             id="categories"
             className="flex flex-wrap flex-col justify-start items-center gap-8 bg-themeBG/90 w-full p-8"
           >
@@ -89,7 +89,7 @@ export default function RootLayout({
                 />
               ))}
             </div>
-          </section>
+          </section> */}
 
           {/* ---------------------------- Footer --------------------------- */}
           <div className="w-full bg-navFooterBG">

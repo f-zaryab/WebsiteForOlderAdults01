@@ -29,6 +29,7 @@ The palette is utlisized from different options given on [Coolors](https://coolo
 4. [RoyalBlue](https://coolors.co/palette/e7ecef-274c77-6096ba-a3cef1-8b8c89)
 
 Additional Brown Color Palette
+
 - [ExtraBrownColor](https://coolors.co/palette/ecf8f8-eee4e1-e7d8c9-e6beae-b2967d)
 
 ### Debugging and Other References
@@ -38,3 +39,4 @@ Additional Brown Color Palette
 3. How to customize themes in tailwind. Debugged using this [link: Custom themes with TailwindCSS in under 9 minutes - Youtube](https://www.youtube.com/watch?v=vg4g68oJNGM)
 4. How to configure fonts in nextjs13. Debugged using this [link](https://prismic.io/blog/nextjs-fonts)
 5. How to navigate between different pages in NextJs-AppRouter. Information provied at this [link](https://nextjs.org/docs/app/api-reference/functions/use-router)
+6. How to fetch data from apis in NextJs. Information provided at these links: [link1](https://nextjs.org/docs/app/building-your-application/data-fetching), [link2](https://nextjs.org/docs/app/building-your-application/data-fetching/fetching-caching-and-revalidating)
