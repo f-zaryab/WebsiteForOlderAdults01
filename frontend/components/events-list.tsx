@@ -1,4 +1,5 @@
 import React from "react";
+import PropertyCard from "./property-card";
 
 async function getData(par: string) {
   const res = await fetch(
@@ -23,16 +24,20 @@ const EventsList = async ({ searchPar }: any) => {
   const responseEvents = data?._embedded?.events || {};
 
   return (
-    <div className="text-green-600">
+    <div className="text-green-300">
       <h2>SearchParams:{searchValue}</h2>
-      <div>
+      <div className="flex flex-wrap justify-start items-start gap-8 my-4 p-8">
         {responseEvents.map((event: any) => (
-          <div
-            key={event?.name}
-            className="flex justify-start items-center gap-4 border border-blue-400 bg-green-300 my-4 p-8"
-          >
-            <p className="text-blue-600">{event?.name}</p>
-            <p>{event?.description?.slice(0, 25) || event?.info}</p>
+          <div key={event?.name} className="h-full">
+            {/* <p className="text-blue-600">{event?.name}</p>
+            <p>{event?.description?.slice(0, 25) || event?.info}</p> */}
+            <PropertyCard
+              title={event?.name}
+              description={
+                event?.description?.slice(0, 10) || event?.info?.slice(0, 10)
+              }
+              hrefUrl={`/events/${event?.id}`}
+            />
           </div>
         ))}
       </div>

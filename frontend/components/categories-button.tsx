@@ -10,7 +10,7 @@ const CategoriesButton = ({ label, href }: CategoriesButtonProps) => {
   return (
     <Link
       href={href}
-      className="bg-green-500 p-4 flex justify-center items-center font-bold rounded-sm"
+      className="bg-slate-800 text-slate-100 p-4 flex justify-center items-center font-bold rounded-sm"
     >
       {label}
     </Link>

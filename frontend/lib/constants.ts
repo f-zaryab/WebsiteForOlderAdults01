@@ -8,13 +8,13 @@ export const navLinks = [
   },
   {
     id: "02",
-    label: "About Page",
-    href: "/about",
+    label: "Our story",
+    href: "/about#our-story",
   },
   {
     id: "03",
-    label: "My Events Page",
-    href: "/myEvents",
+    label: "Login",
+    href: "/myevents",
   },
 ];
 
@@ -60,17 +60,17 @@ export const popularSearchOptions = [
   {
     id: "upcoming-events",
     label: "Upcoming Events",
-    href: "/events?cat=upcoming",
+    href: "/events?search=upcoming",
   },
   {
     id: "popular-events",
     label: "Popular Events",
-    href: "/events?cat=popular",
+    href: "/events?search=popular",
   },
   {
     id: "online-events",
     label: "Online Events",
-    href: "/events?cat=online",
+    href: "/events?search=online",
   },
   {
     id: "explore-events-categories",

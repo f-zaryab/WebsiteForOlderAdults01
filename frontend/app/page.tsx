@@ -81,8 +81,10 @@ export default async function Home() {
         className="flex flex-wrap flex-col justify-start items-center gap-8 bg-themeBG/90 w-full p-8"
       >
         <div>
-          <h2>Find what you are looking for</h2>
-          <p>Select categories and we would find best events for you</p>
+          <h2 className="text-black">Find what you are looking for</h2>
+          <p className="text-black">
+            Select categories and we would find best events for you
+          </p>
         </div>
         <div className="flex flex-wrap justify-between items-center gap-4">
           {responseArrCategories?.map((event: any) => (

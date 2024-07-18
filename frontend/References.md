@@ -10,14 +10,16 @@
 
 ### Components Added
 
-1. [Shadcn/ui - Button](https://ui.shadcn.com/docs/components/button): npx shadcn-ui@latest add button
-2. [Shadcn/ui - Label](https://ui.shadcn.com/docs/components/label): npx shadcn-ui@latest add label
-3. [Shadcn/ui - RadioGroup](https://ui.shadcn.com/docs/components/radio-group): npx shadcn-ui@latest add radio-group
-4. [Shadcn/ui - NavigationMenu](https://ui.shadcn.com/docs/components/navigation-menu): npx shadcn-ui@latest add navigation-menu
-5. [Shadcn/ui - Tooltip](https://ui.shadcn.com/docs/components/tooltip): npx shadcn-ui@latest add tooltip
-6. [Shadcn/ui - Input](https://ui.shadcn.com/docs/components/input): npx shadcn-ui@latest add input
-7. [Shadcn/ui - Forms](https://ui.shadcn.com/docs/components/form): npx shadcn-ui@latest add form
-8. [Shadcn/ui - Badge](https://ui.shadcn.com/docs/components/badge): npx shadcn-ui@latest add badge
+1.  [Shadcn/ui - Button](https://ui.shadcn.com/docs/components/button): npx shadcn-ui@latest add button
+2.  [Shadcn/ui - Label](https://ui.shadcn.com/docs/components/label): npx shadcn-ui@latest add label
+3.  [Shadcn/ui - RadioGroup](https://ui.shadcn.com/docs/components/radio-group): npx shadcn-ui@latest add radio-group
+4.  [Shadcn/ui - NavigationMenu](https://ui.shadcn.com/docs/components/navigation-menu): npx shadcn-ui@latest add navigation-menu
+5.  [Shadcn/ui - Tooltip](https://ui.shadcn.com/docs/components/tooltip): npx shadcn-ui@latest add tooltip
+6.  [Shadcn/ui - Input](https://ui.shadcn.com/docs/components/input): npx shadcn-ui@latest add input
+7.  [Shadcn/ui - Forms](https://ui.shadcn.com/docs/components/form): npx shadcn-ui@latest add form
+8.  [Shadcn/ui - Badge](https://ui.shadcn.com/docs/components/badge): npx shadcn-ui@latest add badge
+9.  [Shacn/ui - Card](https://ui.shadcn.com/docs/components/card): npx shadcn-ui@latest add card
+10. [Shadcn/ui - Avatar](https://ui.shadcn.com/docs/components/avatar): npx shadcn-ui@latest add avatar
 
 ### Themes/Colors
 

@@ -12,7 +12,7 @@ const HeroBannerSecond = async () => {
         <div className="p-4 rounded-[0.25rem] bg-themeBG/75 flex flex-col items-center">
           {/* ----------- Title on Hero Banner ------------ */}
           <h1 className="text-black font-mono">
-            Creating <span>unforgettable</span> memories, one at a time
+            Choose experiences that make you happy!
           </h1>
 
           {/* -------------- Search Box -------------------- */}
