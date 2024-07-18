@@ -9,29 +9,29 @@ export const metadata: Metadata = {
   description: "Social Connections: Search what type of event you want",
 };
 
-async function getData() {
-  const res = await fetch(
-    `https://www.eventbriteapi.com/v3/categories/?token=${process.env.EVENTBRITE_API_KEY}`
-  );
+// async function getData() {
+//   const res = await fetch(
+//     `https://www.eventbriteapi.com/v3/categories/?token=${process.env.EVENTBRITE_API_KEY}`
+//   );
 
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error("Failed to fetch data");
-  }
+//   if (!res.ok) {
+//     // This will activate the closest `error.js` Error Boundary
+//     throw new Error("Failed to fetch data");
+//   }
 
-  const apiRes = res.json();
+//   const apiRes = res.json();
 
-  return apiRes;
-}
+//   return apiRes;
+// }
 
-async function getEventBriteCategoriesData() {
+async function getTicketMasterCategoriesData() {
   const res = await fetch(
     `https://app.ticketmaster.com/discovery/v2/classifications?apikey=${process.env.TICKETMASTER_API_KEY}&locale=*`
   );
 
   if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary
-    throw new Error("Failed to fetch data");
+    throw new Error("Failed to fetch data239");
   }
 
   const apiRes = res.json();
@@ -40,9 +40,9 @@ async function getEventBriteCategoriesData() {
 }
 
 export default async function Home() {
-  const data = await getData();
+  // const data = await getData();
 
-  const categoriesData = await getEventBriteCategoriesData();
+  const categoriesData = await getTicketMasterCategoriesData();
 
   const responseArrCategories = categoriesData?._embedded?.classifications
     .map((cat: any) => ({
@@ -85,7 +85,7 @@ export default async function Home() {
           <p>Select categories and we would find best events for you</p>
         </div>
         <div className="flex flex-wrap justify-between items-center gap-4">
-          {responseArrCategories.map((event: any) => (
+          {responseArrCategories?.map((event: any) => (
             <CategoriesButton
               key={event.id}
               label={event.label}
