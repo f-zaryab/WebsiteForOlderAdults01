@@ -25,7 +25,11 @@ const EventsList = async ({ searchPar }: any) => {
 
   return (
     <div className="text-green-300">
-      <h2>SearchParams:{searchValue}</h2>
+      {searchValue ? (
+        <h2>Search Results for :{searchValue}</h2>
+      ) : (
+        <h2>Search Results:</h2>
+      )}
       <div className="flex flex-wrap justify-start items-start gap-8 my-4 p-8">
         {responseEvents.map((event: any) => (
           <div key={event?.name} className="h-full">
