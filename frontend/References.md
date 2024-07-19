@@ -33,6 +33,13 @@ The palette is utlisized from different options given on [Coolors](https://coolo
 Additional Brown Color Palette
 
 - [ExtraBrownColor](https://coolors.co/palette/ecf8f8-eee4e1-e7d8c9-e6beae-b2967d)
+- [SlateGray](https://coolors.co/708090)
+- [BlackColor](https://coolors.co/010b13)
+- [TanBrown](https://coolors.co/d2b48c)
+- [SlateBrown](https://coolors.co/81613e)
+- [DarkGreen](https://coolors.co/49796b)
+- [CelestialBlue](https://coolors.co/4997d0)
+- [CarolinBlue](https://coolors.co/70aeda)
 
 ### Debugging and Other References
 

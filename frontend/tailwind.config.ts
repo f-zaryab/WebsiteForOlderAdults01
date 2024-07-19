@@ -73,6 +73,7 @@ const config = {
         myInversePrimary: "hsl(var(--myInversePrimary))",
         pillPrimary: "hsl(var(--pillPrimary))",
         pillInversePrimary: "hsl(var(--pillInversePrimary))",
+        textNavPrimary: "hsl(var(--textNavPrimary))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",

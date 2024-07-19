@@ -10,12 +10,14 @@ const About = () => {
             src={"/herobanner02.jpg"}
             alt="travel-image"
             sizes="100vw"
+            priority
             width={0}
             height={0}
             style={{
               width: "36rem",
               height: "auto",
               objectFit: "contain",
+              borderRadius: "1.5rem",
             }}
           />
         </div>

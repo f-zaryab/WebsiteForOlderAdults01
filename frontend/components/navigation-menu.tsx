@@ -2,8 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
-// import { Icons } from "@/components/icons"
+import Image from "next/image";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -17,12 +16,24 @@ import { navLinks } from "@/lib/constants";
 
 const NavMenu = () => {
   return (
-    <div className="p-2 center-page-alignment center-component-alignment justify-between">
-      <div>
+    <div className="p-2 center-page-alignment center-component-alignment justify-center">
+      {/* <div>
         <Link href="/" passHref>
-          <h1>Logo</h1>
+          <Image
+            src={"/logoTwo.png"}
+            alt="travel-image"
+            sizes="100vw"
+            priority
+            width={0}
+            height={0}
+            style={{
+              width: "5rem",
+              height: "3rem",
+              objectFit: "contain",
+            }}
+          />
         </Link>
-      </div>
+      </div> */}
       <div>
         <NavigationMenu>
           <NavigationMenuList className="gap-4">

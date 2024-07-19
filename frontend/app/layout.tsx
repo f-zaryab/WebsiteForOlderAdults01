@@ -64,7 +64,7 @@ export default function RootLayout({
           </section>
 
           {/* --------------------------- Navbar ---------------------------- */}
-          <section className="top-[9.75rem] sml:top-[6rem] mdl:top-[4rem] lg:top-[4rem] fixed w-full bg-navFooterBG z-10">
+          <section className="top-[9.75rem] sml:top-[6rem] mdl:top-[4rem] lg:top-[4.5rem] fixed w-full bg-navFooterBG z-10 shadow-lg">
             <NavMenu />
           </section>
 

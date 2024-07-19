@@ -11,7 +11,7 @@ const SizePicker = ({ currentSize, handleSize }: SizePickerProps) => {
   // Get current website fontSize and increament/decreament by 2.
 
   const handleIncreaseSize = () => {
-    if (currentSize < 48) {
+    if (currentSize < 19) {
       handleSize(currentSize + 2);
     }
   };
