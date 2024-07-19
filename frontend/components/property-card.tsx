@@ -20,7 +20,7 @@ interface PropertyCardProp {
 const PropertyCard = ({ title, description, hrefUrl }: PropertyCardProp) => {
   return (
     <Link href={hrefUrl} className="h-full">
-      <Card className="w-96 h-full bg-slate-200 text-black">
+      <Card className="w-96 h-full bg-slate-200 text-black border-none shadow-lg">
         <CardHeader>
           <CardTitle>{title}</CardTitle>
           {/* <CardDescription>{description}</CardDescription> */}
@@ -30,7 +30,7 @@ const PropertyCard = ({ title, description, hrefUrl }: PropertyCardProp) => {
         </CardContent>
         <CardFooter className="flex justify-around items-center">
           <p>Price starting from: </p>
-          <Button variant="outline" className="rounded-full w-10 h-10 p-0">
+          <Button variant="basic" className="rounded-full w-10 h-10 p-0">
             <Heart />
           </Button>
         </CardFooter>
