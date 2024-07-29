@@ -24,35 +24,35 @@ export const metadata: Metadata = {
 //   return apiRes;
 // }
 
-async function localApiGET() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/test`);
+// async function localApiGET() {
+//   const res = await fetch(`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/test`);
 
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error("Failed to fetch data");
-  }
+//   if (!res.ok) {
+//     // This will activate the closest `error.js` Error Boundary
+//     throw new Error("Failed to fetch data");
+//   }
 
-  const apiRes = res.json();
+//   const apiRes = res.json();
 
-  return apiRes;
-}
+//   return apiRes;
+// }
 
-async function localApiPOST() {
-  try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/test`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-    });
+// async function localApiPOST() {
+//   try {
+//     const res = await fetch(`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/test`, {
+//       method: "POST",
+//       headers: { "Content-Type": "application/json" },
+//     });
 
-    if (!res.ok) {
-      throw new Error("Failed to fetch data123");
-    }
+//     if (!res.ok) {
+//       throw new Error("Failed to fetch data123");
+//     }
 
-    return res.json();
-  } catch (e) {
-    return {};
-  }
-}
+//     return res.json();
+//   } catch (e) {
+//     return {};
+//   }
+// }
 
 async function externalApiGraphql() {
   let graphql = JSON.stringify({
@@ -104,11 +104,11 @@ async function getTicketMasterCategoriesData() {
 export default async function Home() {
   // const data = await getData();
 
-  const respApi = await localApiGET();
-  console.log("Response: ", respApi);
+  // const respApi = await localApiGET();
+  // console.log("Response: ", respApi);
 
-  const respApiPOST = await localApiPOST();
-  console.log("Response-POST: ", respApiPOST);
+  // const respApiPOST = await localApiPOST();
+  // console.log("Response-POST: ", respApiPOST);
 
   const respApiGraphql = await externalApiGraphql();
   console.log("Response-POST-GRAPHQL: ", respApiGraphql?.data);
@@ -166,7 +166,7 @@ export default async function Home() {
             />
           ))}
         </div>
-        <div>Sample Data: {respApi?.message}</div>
+        {/* <div>Sample Data: {respApi?.message}</div> */}
         {/* <div>POST Req Data: {respApiPOST?.message}</div> */}
         <div>
           {respApiGraphql?.data?.countries?.map((item: any) => {
