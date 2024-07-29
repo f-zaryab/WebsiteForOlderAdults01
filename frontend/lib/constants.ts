@@ -3,11 +3,16 @@ export const themeOptions: string[] = ["grey", "brown", "green", "blue"];
 export const navLinks = [
   {
     id: "01",
+    label: "Home Page",
+    href: "/",
+  },
+  {
+    id: "02",
     label: "Events Page",
     href: "/events",
   },
   {
-    id: "02",
+    id: "03",
     label: "Our story",
     href: "/about#our-story",
   },
@@ -78,3 +83,5 @@ export const popularSearchOptions = [
     href: "#categories",
   },
 ];
+
+export const eventsPerPage = 4;

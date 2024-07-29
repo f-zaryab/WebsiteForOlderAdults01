@@ -2,10 +2,15 @@ import React, { Suspense } from "react";
 import EventsList from "@/components/events-list";
 
 interface EventPageProps {
-  searchParams: string;
+  searchParams: {
+    search?: string;
+    page?: string;
+  };
 }
 
 const Event = async ({ searchParams }: EventPageProps) => {
+  console.log("SearchParams: ", searchParams);
+
   return (
     <main className="flex min-h-[80vh] items-center justify-between p-24 relative">
       <div className="max-w-screen-lg flex flex-wrap items-start">
@@ -14,7 +19,10 @@ const Event = async ({ searchParams }: EventPageProps) => {
         </div>
         <div className="w-9/12">
           <Suspense>
-            <EventsList searchPar={searchParams} />
+            <EventsList
+              searchKeyword={searchParams?.search}
+              pageNo={searchParams?.page}
+            />
           </Suspense>
         </div>
       </div>

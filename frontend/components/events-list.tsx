@@ -1,5 +1,12 @@
 import React from "react";
 import PropertyCard from "./property-card";
+import { eventsPerPage } from "@/lib/constants";
+import Paginations from "./pagination";
+
+interface EventListProps {
+  searchKeyword?: string;
+  pageNo?: string;
+}
 
 async function getData(par: string) {
   const res = await fetch(
@@ -16,22 +23,33 @@ async function getData(par: string) {
   return apiRes;
 }
 
-const EventsList = async ({ searchPar }: any) => {
-  const searchValue = searchPar?.search;
-
-  const data = await getData(searchValue);
+const EventsList = async ({ searchKeyword, pageNo }: EventListProps) => {
+  // Fetching Data -----------------------------------------------
+  const data = await getData(searchKeyword || "");
 
   const responseEvents = data?._embedded?.events || {};
 
+  // Computing Page for Pagination -------------------------------
+  const currentPage = Number(pageNo) || 1;
+  const totalPages = Math.ceil(responseEvents.length / eventsPerPage);
+
+  // console.log("totalPages: ", totalPages);
+  // console.log("cureentPage: ", currentPage);
+
+  const paginatedEvents = responseEvents.slice(
+    eventsPerPage * (currentPage - 1),
+    eventsPerPage * currentPage
+  );
+
   return (
     <div className="text-green-300">
-      {searchValue ? (
-        <h2>Search Results for :{searchValue}</h2>
+      {searchKeyword ? (
+        <h2>Search Results for :{searchKeyword}</h2>
       ) : (
         <h2>Search Results:</h2>
       )}
       <div className="flex flex-wrap justify-start items-start gap-8 my-4 p-8">
-        {responseEvents.map((event: any) => (
+        {paginatedEvents.map((event: any) => (
           <div key={event?.name} className="h-full">
             {/* <p className="text-blue-600">{event?.name}</p>
             <p>{event?.description?.slice(0, 25) || event?.info}</p> */}
@@ -44,6 +62,10 @@ const EventsList = async ({ searchPar }: any) => {
             />
           </div>
         ))}
+
+        <div>
+          <Paginations totalPages={totalPages} />
+        </div>
       </div>
     </div>
   );
