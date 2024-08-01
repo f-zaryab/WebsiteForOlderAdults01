@@ -101,6 +101,42 @@ async function getTicketMasterCategoriesData() {
   return apiRes;
 }
 
+async function externalApiMeetupAPIGraphql() {
+  let graphql = JSON.stringify({
+    query: ` {
+    event(id: "302214509") {
+      title
+      description
+      dateTime
+      eventUrl
+      isOnline
+      hosts {
+        name
+      }
+    }
+  }`,
+    variables: {},
+  });
+
+  let requestOptions = {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: graphql,
+  };
+
+  try {
+    const res = await fetch("https://api.meetup.com/gql", requestOptions);
+
+    if (!res.ok) {
+      throw new Error("Failed to fetch data123");
+    }
+
+    return res.json();
+  } catch (e) {
+    return {};
+  }
+}
+
 export default async function Home() {
   // const data = await getData();
 
@@ -111,7 +147,13 @@ export default async function Home() {
   // console.log("Response-POST: ", respApiPOST);
 
   const respApiGraphql = await externalApiGraphql();
-  console.log("Response-POST-GRAPHQL: ", respApiGraphql?.data);
+  // console.log("Response-POST-GRAPHQL: ", respApiGraphql?.data);
+
+  const respApiGraphqlMeetupAPI = await externalApiMeetupAPIGraphql();
+  console.log(
+    "Response-POST-respApiGraphqlMeetupAPI: ",
+    respApiGraphqlMeetupAPI?.data
+  );
 
   const categoriesData = await getTicketMasterCategoriesData();
 
@@ -168,6 +210,11 @@ export default async function Home() {
         </div>
         {/* <div>Sample Data: {respApi?.message}</div> */}
         {/* <div>POST Req Data: {respApiPOST?.message}</div> */}
+        <div>
+          <p className="text-black" id="meetup">
+            {respApiGraphqlMeetupAPI?.data?.event?.title}
+          </p>
+        </div>
         <div>
           {respApiGraphql?.data?.countries?.map((item: any) => {
             return <p key={item.name}>{item.name}</p>;
