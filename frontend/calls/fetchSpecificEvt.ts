@@ -9,6 +9,7 @@ const gqlFetchSpecificEvent = async(event: string) => {
         dateTime
         eventUrl
         isOnline
+        imageUrl
         hosts {
           name
         }

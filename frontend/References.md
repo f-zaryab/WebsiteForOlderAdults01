@@ -51,3 +51,4 @@ Additional Brown Color Palette
 5. How to navigate between different pages in NextJs-AppRouter. Information provied at this [link](https://nextjs.org/docs/app/api-reference/functions/use-router)
 6. How to fetch data from apis in NextJs. Information provided at these links: [link1](https://nextjs.org/docs/app/building-your-application/data-fetching), [link2](https://nextjs.org/docs/app/building-your-application/data-fetching/fetching-caching-and-revalidating)
 7. How to implement pagination in client side components using useParams hooks in next-js. Debugged using this [tutorial](https://www.youtube.com/watch?v=tSI98g3PDyE&list=PLKixLCBbkGHWavP8jtbyx62niDb_UVdsw&index=2)
+8. Was not showing slug page. Deleting json.vercel fixed it.
