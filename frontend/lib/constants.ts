@@ -27,37 +27,37 @@ export const eventCategories = [
   {
     id: "01_travel",
     label: "Travel and Outdoor",
-    href: "/events?cat=travel-outdoor",
+    href: "/events?search=travel-outdoor",
   },
   {
     id: "02_social",
     label: "Social Activities",
-    href: "/events?cat=social_activities",
+    href: "/events?search=social_activities",
   },
   {
     id: "03_hobbies",
     label: "Hobbies and Passion",
-    href: "/events?cat=hobbies_passion",
+    href: "/events?search=hobbies_passion",
   },
   {
     id: "04_sports",
     label: "Sports and Fitness",
-    href: "/events?cat=sports_fitness",
+    href: "/events?search=sports_fitness",
   },
   {
     id: "05_technology",
     label: "Technology",
-    href: "/events?cat=technology",
+    href: "/events?search=technology",
   },
   {
     id: "06_art",
     label: "Art and Culture",
-    href: "/events?cat=art_culture",
+    href: "/events?search=art_culture",
   },
   {
     id: "07_games",
     label: "Games",
-    href: "/events?cat=games",
+    href: "/events?search=games",
   },
 ];
 

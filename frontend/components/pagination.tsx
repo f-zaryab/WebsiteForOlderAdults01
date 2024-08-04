@@ -33,10 +33,10 @@ const Paginations = ({ totalPages }: PaginationProps) => {
   };
 
   return (
-    <Pagination className="justify-end mt-4">
+    <Pagination className="justify-start mt-4 text-black hover:text-black duration-100">
       <PaginationContent>
         {prevPg >= 1 ? (
-          <PaginationItem>
+          <PaginationItem className="text-lrg">
             <PaginationPrevious href={createPageURL(prevPg)} />
           </PaginationItem>
         ) : null}
@@ -46,7 +46,7 @@ const Paginations = ({ totalPages }: PaginationProps) => {
           .map((_, index) => (
             <PaginationItem
               key={`page-btn-${index}`}
-              className="hidden sm:inline-block"
+              className="hidden sm:inline-block text-lrg"
             >
               <PaginationLink
                 href={createPageURL(index + 1)}
@@ -58,7 +58,7 @@ const Paginations = ({ totalPages }: PaginationProps) => {
           ))}
 
         {nextPg <= totalPages ? (
-          <PaginationItem>
+          <PaginationItem className="text-lrg duration-100">
             <PaginationNext href={createPageURL(nextPg)} />
           </PaginationItem>
         ) : null}
