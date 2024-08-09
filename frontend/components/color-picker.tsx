@@ -29,7 +29,7 @@ const ColorPicker = ({ themeSelected, themeChange }: ColorPickerProps) => {
       >
         {themeOptions.map((option) => (
           <div className="flex  items-center space-x-2" key={option}>
-            <RadioGroupItem value={option} id={option} />
+            <RadioGroupItem value={option} id={option} aria-label={option} />
             <Label htmlFor={option} className="text-black">
               {option}
             </Label>
