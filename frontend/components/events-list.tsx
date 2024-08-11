@@ -30,14 +30,17 @@ const EventsList = async ({ searchKeyword, pageNo }: EventListProps) => {
       ) : (
         <h2>Search Results:</h2>
       )}
+
       <div className="flex flex-wrap justify-start items-start gap-8 my-4 p-8">
         {paginatedEvents.map((event: any) => (
           <div key={event?.node?.id} className="h-[32rem]">
             <EventCard
+              index={event?.node?.id}
               title={event?.node?.result?.title}
               imageUrl={event?.node?.result?.imageUrl}
               description={event?.node?.result?.description}
               hrefUrl={`/events/${event?.node?.id}`}
+              isSaved={false} // integrate this when user data available
             />
           </div>
         ))}
