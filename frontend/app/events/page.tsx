@@ -1,5 +1,6 @@
 import React, { Suspense } from "react";
 import EventsList from "@/components/events-list";
+import NavigationBreadcrumbs from "@/components/navigation-breadcrumbs";
 
 interface EventPageProps {
   searchParams: {
@@ -18,6 +19,9 @@ const Event = async ({ searchParams }: EventPageProps) => {
           <h1 className="text-black">Side Filters</h1>
         </div>
         <div className="w-9/12">
+          <div>
+            <NavigationBreadcrumbs />
+          </div>
           <Suspense fallback={<p>Loading...</p>}>
             <EventsList
               searchKeyword={searchParams?.search}

@@ -9,6 +9,7 @@ import { Separator } from "@/components/ui/separator";
 import BackButton from "@/components/back-button";
 import EventMiniCard from "@/components/event-mini-card";
 import EventOrganizerCard from "@/components/event-organizer-card";
+import NavigationBreadcrumbs from "@/components/navigation-breadcrumbs";
 import gqlFetchSpecificEvent from "@/calls/fetchSpecificEvt";
 
 const EventDetailPage = async ({ params }: any) => {
@@ -21,9 +22,15 @@ const EventDetailPage = async ({ params }: any) => {
     <main className="flex min-h-[80vh] flex-col items-center justify-between p-24 relative">
       <div className="flex flex-col items-start text-black text-lrg">
         {/* ---- Back Button ---- */}
-        <Suspense fallback={<p>Loading...</p>}>
-          <BackButton />
-        </Suspense>
+        <div className="flex flex-wrap justify-start items-center gap-16 mb-4">
+          <Suspense fallback={<p>Loading...</p>}>
+            <BackButton />
+          </Suspense>
+
+          <div>
+            <NavigationBreadcrumbs />
+          </div>
+        </div>
 
         {/* ---------------------------------- Centeral Image ----------------------------------------------- */}
         <div className="w-full md:w-3/5 mx-auto h-auto">
@@ -50,16 +57,16 @@ const EventDetailPage = async ({ params }: any) => {
         <div className="grid grid-cols-3 gap-8">
           <div className="col-span-3 md:col-span-1">
             {/* ---- Badges ---- */}
-            <div className="flex gap-4 ">
+            <div className="flex flex-wrap gap-1 md:gap-4 ">
               <Badge
                 variant="secondary"
-                className="cursor-default my-4 bg-slate-700"
+                className="cursor-default my-1 md:my-4 bg-slate-700"
               >
                 {event?.eventType}
               </Badge>
               <Badge
                 variant="secondary"
-                className="cursor-default my-4 bg-slate-500"
+                className="cursor-default my-1 md:my-4 bg-slate-500"
               >
                 EVENT {event?.timeStatus}
               </Badge>
@@ -89,28 +96,32 @@ const EventDetailPage = async ({ params }: any) => {
             <Separator className="my-4" />
 
             {/* ---- Host Info ---- */}
-            <div className="my-4">
-              <EventOrganizerCard
-                name={event?.hosts[0]?.name}
-                img={event?.hosts[0]?.memberPhoto?.source}
-                otherEvents={event?.hosts[0]?.hostedEvents?.edges}
-              />
-            </div>
+            {event?.hosts[0]?.name && (
+              <div className="my-4">
+                <EventOrganizerCard
+                  name={event?.hosts[0]?.name}
+                  img={event?.hosts[0]?.memberPhoto?.source}
+                  otherEvents={event?.hosts[0]?.hostedEvents?.edges}
+                />
+              </div>
+            )}
 
             <Separator className="my-4" />
 
             {/* ---- Tags ---- */}
-            <div className="my-4">
-              <p>Related Topics: </p>
-              <div className="flex flex-wrap gap-2 my-4">
-                {event?.topics?.edges?.map((topic: any) => (
-                  <EventMiniCard
-                    key={topic?.node?.id}
-                    title={topic?.node?.name}
-                  />
-                ))}
+            {event?.topics?.edges.length && (
+              <div className="my-4">
+                <p>Related Topics: </p>
+                <div className="flex flex-wrap gap-2 my-4">
+                  {event?.topics?.edges?.map((topic: any) => (
+                    <EventMiniCard
+                      key={topic?.node?.id}
+                      title={topic?.node?.name}
+                    />
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
           </div>
 
           {/* ------------------------ Description -------------------------- */}
@@ -126,7 +137,7 @@ const EventDetailPage = async ({ params }: any) => {
         <Separator className="my-8" />
 
         {/* ---------------------- Buttons: Back-Btn && Org-Link-Btn ---------------------- */}
-        <div className="flex justify-start items-center gap-4">
+        <div className="flex flex-wrap justify-start items-center gap-1 md:gap-4">
           <Suspense fallback={<p>Loading...</p>}>
             <BackButton />
           </Suspense>

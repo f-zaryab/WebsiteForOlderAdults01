@@ -8,8 +8,6 @@ import NavMenu from "@/components/navigation-menu";
 import Footer from "@/components/footer";
 import { themeOptions } from "@/lib/constants";
 import SizePicker from "@/components/size-picker";
-// import CategoriesButton from "@/components/categories-button";
-// import { eventCategories } from "@/lib/constants";
 
 // ----------------- FONTS ------------------------//
 const inter = Inter({ subsets: ["latin"] });
@@ -70,26 +68,6 @@ export default function RootLayout({
 
           {/* --------------------------- Children -------------------------- */}
           <div className="mt-32">{children}</div>
-
-          {/*  */}
-          {/* <section
-            id="categories"
-            className="flex flex-wrap flex-col justify-start items-center gap-8 bg-themeBG/90 w-full p-8"
-          >
-            <div>
-              <h2>Find what you are looking for</h2>
-              <p>Select categories and we would find best events for you</p>
-            </div>
-            <div className="flex flex-wrap justify-between items-center gap-4">
-              {eventCategories.map((event) => (
-                <CategoriesButton
-                  key={event.id}
-                  label={event.label}
-                  href={event.href}
-                />
-              ))}
-            </div>
-          </section> */}
 
           {/* ---------------------------- Footer --------------------------- */}
           <div className="w-full bg-navFooterBG">
