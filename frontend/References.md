@@ -21,6 +21,8 @@
 9.  [Shacn/ui - Card](https://ui.shadcn.com/docs/components/card): npx shadcn-ui@latest add card
 10. [Shadcn/ui - Avatar](https://ui.shadcn.com/docs/components/avatar): npx shadcn-ui@latest add avatar
 11. [Shadcn/ui - Pagination](https://ui.shadcn.com/docs/components/pagination): npx shadcn-ui@latest add pagination
+12. [Shadcn.ui - Badge](https://ui.shadcn.com/docs/components/badge): npx shadcn-ui@latest add badge
+13. [Shadcn/ui - Seperator](https://ui.shadcn.com/docs/components/separator): npx shadcn-ui@latest add separator
 
 ### Themes/Colors
 
@@ -52,3 +54,4 @@ Additional Brown Color Palette
 6. How to fetch data from apis in NextJs. Information provided at these links: [link1](https://nextjs.org/docs/app/building-your-application/data-fetching), [link2](https://nextjs.org/docs/app/building-your-application/data-fetching/fetching-caching-and-revalidating)
 7. How to implement pagination in client side components using useParams hooks in next-js. Debugged using this [tutorial](https://www.youtube.com/watch?v=tSI98g3PDyE&list=PLKixLCBbkGHWavP8jtbyx62niDb_UVdsw&index=2)
 8. Was not showing slug page. Deleting json.vercel fixed it.
+9. How to navigate back, specially when we can not specify exact url. It is done using useRouter hook, but component needs to be client-side component. [Doc-link here](https://nextjs.org/docs/app/api-reference/functions/use-router#userouter)
