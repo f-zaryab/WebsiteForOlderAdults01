@@ -3,6 +3,7 @@
 1. nextjs
 2. tailwind
 3. shadcnUI
+4. React-Markdown
 
 ### Tailwind Customization and Usage
 
@@ -57,3 +58,8 @@ Additional Brown Color Palette
 8. Was not showing slug page. Deleting json.vercel fixed it.
 9. How to navigate back, specially when we can not specify exact url. It is done using useRouter hook, but component needs to be client-side component. [Doc-link here](https://nextjs.org/docs/app/api-reference/functions/use-router#userouter)
 10. How to get url pathname in nextjs-app-router. Debugged using this [link](https://nextjs.org/docs/app/api-reference/functions/use-pathname)
+11. React Context links: [Link1](https://dev.to/muhammadazfaraslam/managing-global-state-with-usereducer-and-context-api-in-next-js-14-2m17), [Link2](https://atulfind.medium.com/react-global-state-management-using-context-and-reducer-fa5b85f43b61), [Link3](https://scientyficworld.org/react-context-api-for-global-state-management/), [Link4](https://dev.to/shareef/context-api-with-typescript-and-next-js-2m25)
+12. Converting description text using markdown-library: [React-Markdown-Lib](https://www.npmjs.com/package/react-markdown/v/8.0.6)
+13. Filtering Arrays in UserDataContext: [concat-js](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat), [includes-js](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes)
+14. Deciding between Server and Client components: [Next-Rendering-Patterns](https://nextjs.org/docs/app/building-your-application/rendering/composition-patterns)
+15. Context was being cleared when navigating to next page. Fixed it through localStorage. Guided by this [link](https://stackoverflow.com/questions/73346406/context-is-cleared-when-i-navigate-to-another-page-with-the-browser-address-bar)

@@ -2,6 +2,7 @@
 import React, { Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import ReactMarkdown from "react-markdown";
 // lib
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -127,7 +128,7 @@ const EventDetailPage = async ({ params }: any) => {
           {/* ------------------------ Description -------------------------- */}
           <div className="col-span-3 md:col-span-2">
             {event?.description ? (
-              <p>{event?.description}</p>
+              <ReactMarkdown>{event?.description}</ReactMarkdown>
             ) : (
               <p>Sorry, no description available for this event.</p>
             )}

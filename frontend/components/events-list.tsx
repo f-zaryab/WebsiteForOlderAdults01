@@ -40,7 +40,6 @@ const EventsList = async ({ searchKeyword, pageNo }: EventListProps) => {
               imageUrl={event?.node?.result?.imageUrl}
               description={event?.node?.result?.description}
               hrefUrl={`/events/${event?.node?.id}`}
-              isSaved={false} // integrate this when user data available
               tags={event?.node?.result?.topics?.edges}
             />
           </div>

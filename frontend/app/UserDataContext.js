@@ -16,20 +16,44 @@ export const reducer = (state, action) => {
 
 const initialUserData = {
   events: [],
-  tags: []
-}
+  tags: [],
+};
 
 export const UserDataProvider = ({ children }) => {
   const [state, setState] = useState(initialUserData);
 
-  const updateEvents = (val, tag) => {
-    setState(prev => {
-      return {
-        ...prev,
-        events: [...prev.events, val],
-        tags: [...prev.tags.concat(tag)]
-      }
-    });
+  const updateEvents = (val, tag, isSavingEvent) => {
+    if (isSavingEvent) {
+      setState((prev) => {
+        return {
+          ...prev,
+          events: [...prev.events, val],
+          tags: [...prev.tags.concat(tag)],
+        };
+      });
+
+      const userData = {
+        events: [...state.events, val],
+        tags: [...state.tags.concat(tag)],
+      };
+
+      localStorage.setItem("userData", JSON.stringify(userData));
+    } else {
+      setState((prev) => {
+        return {
+          ...prev,
+          events: prev.events.filter((evt) => evt.index != val.index),
+          tags: [...prev.tags.filter((tag) => !tag.includes(tag))],
+        };
+      });
+
+      const userData = {
+        events: state.events.filter((evt) => evt.index != val.index),
+        tags: [...state.tags.filter((tag) => !tag.includes(tag))],
+      };
+
+      localStorage.setItem("userData", JSON.stringify(userData));
+    }
   };
 
   return (

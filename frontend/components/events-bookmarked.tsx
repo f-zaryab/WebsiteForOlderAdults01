@@ -1,17 +1,34 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useUserData } from "@/app/UserDataContext";
 import EventCard from "./event-card";
 
 const EventsBookMarked = () => {
   const { state } = useUserData();
+  const [finalData, setFinalData] = useState({ events: [], tags: [] });
+
+  useEffect(() => {
+    const localStorageData = localStorage?.getItem("userData");
+    const stateLS = localStorageData
+      ? JSON.parse(localStorage.getItem("userData")!)
+      : {};
+
+    if (stateLS) {
+      setFinalData(stateLS);
+
+      return;
+    }
+
+    setFinalData(state);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className="flex flex-col">
       <div className="flex flex-wrap justify-start items-start gap-8 text-black">
-        {state?.events?.length > 0 ? (
-          state?.events?.map((event: any) => (
+        {finalData?.events?.length > 0 ? (
+          finalData?.events?.map((event: any) => (
             <div key={event?.index} className="h-[32rem]">
               <EventCard
                 index={event?.index}
@@ -19,7 +36,6 @@ const EventsBookMarked = () => {
                 imageUrl={event?.imageUrl}
                 description={event?.description}
                 hrefUrl={`/events/${event?.index}`}
-                isSaved={false} // integrate this when user data available
                 tags={[]}
               />
             </div>

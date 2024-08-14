@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import ReactMarkdown from "react-markdown";
 import { BookmarkPlus, BookmarkCheck } from "lucide-react";
 import {
   Card,
@@ -22,7 +23,6 @@ interface EventCardProp {
   description: string;
   imageUrl: string;
   hrefUrl: string;
-  isSaved: boolean;
   tags: {
     node: {
       name: string;
@@ -38,14 +38,21 @@ const EventCard = ({
   imageUrl,
   description,
   hrefUrl,
-  isSaved,
   tags,
 }: EventCardProp) => {
-  const [fav, setFav] = useState(isSaved);
+  const [fav, setFav] = useState(false);
   const { state, updateEvents } = useUserData();
 
+  // Checking on-mount that that if property is saved or not: From state and from localStorage
   useEffect(() => {
-    const isInside = state?.events?.some((item: any) => item.index === index);
+    const localStorageData = localStorage?.getItem("userData");
+    const stateLS = localStorageData
+      ? JSON.parse(localStorage.getItem("userData")!)
+      : {};
+
+    const isInside = stateLS?.events
+      ? stateLS?.events?.some((item: any) => item.index === index)
+      : state?.events?.some((item: any) => item.index === index);
 
     if (isInside) {
       setFav(true);
@@ -54,7 +61,7 @@ const EventCard = ({
     }
 
     setFav(false);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state?.events]);
 
   const handleBookmarkEvent = (e: React.MouseEvent) => {
@@ -69,14 +76,20 @@ const EventCard = ({
       hrefUrl,
     };
 
-    const extractedTags = tags.map((tag) => tag?.node?.urlkey);
-
     /*
     Reasoning in UpdateEVents():
       index: to locate event via its id number
       tags: different tags related to event would help in identifying topics in which user is interested
     */
-    updateEvents(cardDataBookmarked, extractedTags);
+    const extractedTags = tags.map((tag) => tag?.node?.urlkey);
+
+    if (!fav) {
+      updateEvents(cardDataBookmarked, extractedTags, true);
+
+      return;
+    } else {
+      updateEvents(cardDataBookmarked, extractedTags, false);
+    }
   };
 
   return (
@@ -108,7 +121,7 @@ const EventCard = ({
           <CardTitle className="text-lrg">{title}</CardTitle>
         </CardHeader>
         <CardContent>
-          <p>{description?.slice(0, 100)}...</p>
+          <ReactMarkdown>{`${description?.slice(0, 100)}...`}</ReactMarkdown>
         </CardContent>
         <CardFooter className="flex justify-start items-center mt-auto">
           <TooltipWrapper tooltipMsg="Click this button to bookmark this event">
