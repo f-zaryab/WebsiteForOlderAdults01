@@ -16,7 +16,7 @@ const Event = async ({ searchParams }: EventPageProps) => {
     <main className="container mx-auto flex min-h-[80vh] items-center justify-between p-24 relative">
       <div className="max-w-screen-lg flex flex-wrap items-start">
         <div className="w-3/12">
-          <h1 className="text-black">Side Filters</h1>
+          <h1 className="text-white">Side Filters</h1>
         </div>
         <div className="w-9/12">
           <div>

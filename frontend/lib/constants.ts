@@ -8,18 +8,13 @@ export const navLinks = [
   },
   {
     id: "02",
-    label: "Events Page",
-    href: "/events",
+    label: "My Events Page",
+    href: "/myevents",
   },
   {
     id: "03",
     label: "Our story",
     href: "/about#our-story",
-  },
-  {
-    id: "04",
-    label: "Login",
-    href: "/myevents",
   },
 ];
 
@@ -32,17 +27,17 @@ export const eventCategories = [
   {
     id: "02_social",
     label: "Social Activities",
-    href: "/events?search=social_activities",
+    href: "/events?search=social-activities",
   },
   {
     id: "03_hobbies",
     label: "Hobbies and Passion",
-    href: "/events?search=hobbies_passion",
+    href: "/events?search=hobbies",
   },
   {
     id: "04_sports",
     label: "Sports and Fitness",
-    href: "/events?search=sports_fitness",
+    href: "/events?search=sports",
   },
   {
     id: "05_technology",
@@ -52,7 +47,7 @@ export const eventCategories = [
   {
     id: "06_art",
     label: "Art and Culture",
-    href: "/events?search=art_culture",
+    href: "/events?search=art-culture",
   },
   {
     id: "07_games",
@@ -84,4 +79,4 @@ export const popularSearchOptions = [
   },
 ];
 
-export const eventsPerPage = 4;
+export const eventsPerPage = 12;

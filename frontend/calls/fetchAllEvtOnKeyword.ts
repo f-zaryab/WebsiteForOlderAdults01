@@ -38,6 +38,16 @@ const gqlFetchAllEventOnKeyword = async (keyword: string) => {
             }
             going
             waiting
+            topics {
+              count
+              edges {
+                node {
+                  name
+                  id
+                  urlkey
+                }
+              }
+            }
           }
         }
       }

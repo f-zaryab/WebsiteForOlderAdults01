@@ -26,9 +26,9 @@ const EventsList = async ({ searchKeyword, pageNo }: EventListProps) => {
   return (
     <div className="flex flex-col">
       {searchKeyword ? (
-        <h2>Search Results for :{searchKeyword}</h2>
+        <h2 className="text-black">Search Results for :{searchKeyword}</h2>
       ) : (
-        <h2>Search Results:</h2>
+        <h2 className="text-black">Search Results:</h2>
       )}
 
       <div className="flex flex-wrap justify-start items-start gap-8 my-4 p-8">
@@ -41,6 +41,7 @@ const EventsList = async ({ searchKeyword, pageNo }: EventListProps) => {
               description={event?.node?.result?.description}
               hrefUrl={`/events/${event?.node?.id}`}
               isSaved={false} // integrate this when user data available
+              tags={event?.node?.result?.topics?.edges}
             />
           </div>
         ))}

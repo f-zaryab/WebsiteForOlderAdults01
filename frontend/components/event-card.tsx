@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { BookmarkPlus, BookmarkCheck } from "lucide-react";
@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "./ui/button";
 import TooltipWrapper from "./tooltip-wrapper";
+import { useUserData } from "@/app/UserDataContext";
 
 interface EventCardProp {
   index: string;
@@ -22,6 +23,13 @@ interface EventCardProp {
   imageUrl: string;
   hrefUrl: string;
   isSaved: boolean;
+  tags: {
+    node: {
+      name: string;
+      id: string;
+      urlkey: string;
+    };
+  }[];
 }
 
 const EventCard = ({
@@ -30,13 +38,45 @@ const EventCard = ({
   imageUrl,
   description,
   hrefUrl,
-  isSaved
+  isSaved,
+  tags,
 }: EventCardProp) => {
   const [fav, setFav] = useState(isSaved);
+  const { state, updateEvents } = useUserData();
+
+  useEffect(() => {
+    const isInside = state?.events?.some((item: any) => item.index === index);
+
+    if (isInside) {
+      setFav(true);
+
+      return;
+    }
+
+    setFav(false);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [state?.events]);
 
   const handleBookmarkEvent = (e: React.MouseEvent) => {
     e.preventDefault();
     setFav(!fav);
+
+    const cardDataBookmarked = {
+      index,
+      title,
+      imageUrl,
+      description,
+      hrefUrl,
+    };
+
+    const extractedTags = tags.map((tag) => tag?.node?.urlkey);
+
+    /*
+    Reasoning in UpdateEVents():
+      index: to locate event via its id number
+      tags: different tags related to event would help in identifying topics in which user is interested
+    */
+    updateEvents(cardDataBookmarked, extractedTags);
   };
 
   return (
@@ -46,7 +86,7 @@ const EventCard = ({
           <div className="h-auto w-full overflow-hidden">
             <Image
               src={imageUrl}
-              alt="travel-image"
+              alt="event-image"
               sizes="100vw"
               priority
               width={0}
@@ -62,13 +102,13 @@ const EventCard = ({
           </div>
           <div className="absolute top-1 left-1 text-white p-2 bg-black rounded-full">
             <TooltipWrapper tooltipMsg="You may use this number to remember this event card">
-              <p>{index.slice(-3)}</p>
+              <p>{index?.slice(-3)}</p>
             </TooltipWrapper>
           </div>
           <CardTitle className="text-lrg">{title}</CardTitle>
         </CardHeader>
         <CardContent>
-          <p>{description.slice(0, 100)}...</p>
+          <p>{description?.slice(0, 100)}...</p>
         </CardContent>
         <CardFooter className="flex justify-start items-center mt-auto">
           <TooltipWrapper tooltipMsg="Click this button to bookmark this event">

@@ -1,16 +1,17 @@
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import React from "react";
+import { Button } from "@/components/ui/button";
+import EventsBookMarked from "@/components/events-bookmarked";
 
 const MyEventsPage = () => {
-  const isLoggedIn = false;
+  const isLoggedIn = true;
 
   return (
     <main className="flex min-h-[80vh] flex-col items-center justify-between p-24">
       {isLoggedIn ? (
         <div>
-          <h1 className="text-black">My shortlisted Events Page</h1>
-          <p>Page under consstruction</p>
+          <h1 className="text-black">My Bookmarked Events: </h1>
+          <EventsBookMarked />
         </div>
       ) : (
         <div>

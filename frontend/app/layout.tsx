@@ -8,6 +8,7 @@ import NavMenu from "@/components/navigation-menu";
 import Footer from "@/components/footer";
 import { themeOptions } from "@/lib/constants";
 import SizePicker from "@/components/size-picker";
+import { UserDataProvider } from "./UserDataContext";
 
 // ----------------- FONTS ------------------------//
 const inter = Inter({ subsets: ["latin"] });
@@ -44,6 +45,8 @@ export default function RootLayout({
       <body
         className={`${inter.className} ${openSans.variable} ${robotoMono.variable} ${themeColor}`}
       >
+        <UserDataProvider>
+
         <>
           {/* ------------------------ Theme Picker -------------------------*/}
           <section className="bg-themeBG w-full py-2 px-4 fixed top-0 z-20 min-h-[9rem] sml:min-h-[6rem] mdl:min-h-[4rem] lg:min-h-[4rem]">
@@ -74,6 +77,7 @@ export default function RootLayout({
             <Footer />
           </div>
         </>
+        </UserDataProvider>
       </body>
     </html>
   );
