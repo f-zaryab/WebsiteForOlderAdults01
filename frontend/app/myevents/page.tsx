@@ -1,26 +1,16 @@
-import Link from "next/link";
 import React from "react";
-import { Button } from "@/components/ui/button";
 import EventsBookMarked from "@/components/events-bookmarked";
+import EventsRecommended from "@/components/events-recommended";
 
 const MyEventsPage = () => {
-  const isLoggedIn = true;
-
   return (
-    <main className="flex min-h-[80vh] flex-col items-center justify-between p-24">
-      {isLoggedIn ? (
-        <div>
-          <h1 className="text-black">My Bookmarked Events: </h1>
-          <EventsBookMarked />
-        </div>
-      ) : (
-        <div>
-          <h1 className="text-black">My shortlisted Events Page</h1>
-          <Link href="/login">
-            <Button variant="basic">Login</Button>
-          </Link>
-        </div>
-      )}
+    <main className="flex min-h-[80vh] flex-col items-start justify-between p-24">
+      <div>
+        <h1 className="text-black">My Bookmarked Events: </h1>
+        <EventsBookMarked />
+        <h2 className="text-black mt-16 mb-4">Recommended Events for you: </h2>
+        <EventsRecommended />
+      </div>
     </main>
   );
 };

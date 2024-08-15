@@ -63,3 +63,6 @@ Additional Brown Color Palette
 13. Filtering Arrays in UserDataContext: [concat-js](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat), [includes-js](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes)
 14. Deciding between Server and Client components: [Next-Rendering-Patterns](https://nextjs.org/docs/app/building-your-application/rendering/composition-patterns)
 15. Context was being cleared when navigating to next page. Fixed it through localStorage. Guided by this [link](https://stackoverflow.com/questions/73346406/context-is-cleared-when-i-navigate-to-another-page-with-the-browser-address-bar)
+16. Server Components nested within client components: [ServerActions](https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations)
+17. Using Async functions in useEffect: [link](https://dev.to/jasmin/how-to-use-async-function-in-useeffect-5efc)
+18. How to get a random value from array: [link](https://www.programiz.com/javascript/examples/get-random-item)
