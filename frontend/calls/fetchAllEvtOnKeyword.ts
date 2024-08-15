@@ -1,11 +1,13 @@
-const gqlFetchAllEventOnKeyword = async (keyword: string) => {
+const gqlFetchAllEventOnKeyword = async (keyword: string, sortField: 'RELEVANCE' | 'DATETIME') => {
   let key = keyword || "popular";
+  let sortFieldType = sortField || 'RELEVANCE'
 
   let graphql = JSON.stringify({
     query: `{
   keywordSearch(
     filter: {query: "${key}", lat: 55.3781, lon: 3.4360, radius: 500, source: EVENTS}
     input: {first: 50}
+    sort: {sortField: ${sortFieldType}}
   ) {
     count
     edges {

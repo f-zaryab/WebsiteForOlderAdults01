@@ -5,6 +5,9 @@ import NavigationBreadcrumbs from "@/components/navigation-breadcrumbs";
 interface EventPageProps {
   searchParams: {
     search?: string;
+    isOnline?: string;
+    filterTimeStatus?: string;
+    filterSortField?: "RELEVANCE" | "DATETIME";
     page?: string;
   };
 }
@@ -13,18 +16,18 @@ const Event = async ({ searchParams }: EventPageProps) => {
   console.log("SearchParams: ", searchParams);
 
   return (
-    <main className="container mx-auto flex min-h-[80vh] items-center justify-between p-24 relative">
-      <div className="max-w-screen-lg flex flex-wrap items-start">
-        <div className="w-3/12">
-          <h1 className="text-white">Side Filters</h1>
-        </div>
-        <div className="w-9/12">
+    <main className="container mx-auto flex min-h-[80vh] items-start justify-between py-24 relative">
+      <div className="max-w-screen-lg flex flex-wrap items-start w-full">
+        <div className="w-full">
           <div>
             <NavigationBreadcrumbs />
           </div>
           <Suspense fallback={<p>Loading...</p>}>
             <EventsList
               searchKeyword={searchParams?.search}
+              filterIsOnline={searchParams?.isOnline}
+              filterTimeStatus={searchParams?.filterTimeStatus}
+              filterSortField={searchParams?.filterSortField}
               pageNo={searchParams?.page}
             />
           </Suspense>

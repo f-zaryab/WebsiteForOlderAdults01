@@ -22,7 +22,7 @@ const NavigationBreadcrumbs = () => {
           <BreadcrumbItem>
             <BreadcrumbLink
               href="/"
-              className="text-white hover:text-black bg-myInversePrimary hover:bg-pageBG px-4 py-1 rounded-md"
+              className="text-white hover:text-black bg-myInversePrimary hover:bg-pageBG flex items-center justify-center h-11 px-4 py-0 rounded-xl"
             >
               Home
             </BreadcrumbLink>
@@ -31,7 +31,7 @@ const NavigationBreadcrumbs = () => {
           <BreadcrumbItem>
             <BreadcrumbLink
               href={`/${pathArray[1]}`}
-              className="text-white hover:text-black bg-myInversePrimary hover:bg-pageBG px-4 py-1 rounded-md"
+              className="text-white hover:text-black bg-myInversePrimary hover:bg-pageBG flex items-center justify-center h-11 px-4 py-0 rounded-xl"
             >
               {pathArray[1]}
             </BreadcrumbLink>
@@ -42,7 +42,7 @@ const NavigationBreadcrumbs = () => {
               <BreadcrumbItem>
                 <BreadcrumbLink
                   href={pathname}
-                  className="text-white hover:text-black bg-myInversePrimary hover:bg-pageBG px-4 py-1 rounded-md"
+                  className="text-white hover:text-black bg-myInversePrimary hover:bg-pageBG flex items-center justify-center h-11 px-4 py-0 rounded-xl"
                 >
                   Event Details
                 </BreadcrumbLink>

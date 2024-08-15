@@ -25,6 +25,7 @@
 12. [Shadcn.ui - Badge](https://ui.shadcn.com/docs/components/badge): npx shadcn-ui@latest add badge
 13. [Shadcn/ui - Seperator](https://ui.shadcn.com/docs/components/separator): npx shadcn-ui@latest add separator
 14. [Shadcn/ui - Breadcrumbs](https://ui.shadcn.com/docs/components/breadcrumb): npx shadcn-ui@latest add breadcrumb
+15. [Shadcn/ui - Sheet](https://ui.shadcn.com/docs/components/sheet): npx shadcn-ui@latest add sheet
 
 ### Themes/Colors
 
@@ -66,3 +67,4 @@ Additional Brown Color Palette
 16. Server Components nested within client components: [ServerActions](https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations)
 17. Using Async functions in useEffect: [link](https://dev.to/jasmin/how-to-use-async-function-in-useeffect-5efc)
 18. How to get a random value from array: [link](https://www.programiz.com/javascript/examples/get-random-item)
+19. How to close Shadcn/ui-sheet from the links in the content. Debugged using this [link](https://github.com/shadcn-ui/ui/discussions/1790)

@@ -4,6 +4,13 @@ import Image from "next/image";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 // lib
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
@@ -94,35 +101,54 @@ const EventDetailPage = async ({ params }: any) => {
               </div>
             ) : null}
 
-            <Separator className="my-4" />
+            <Separator className="my-8" />
 
-            {/* ---- Host Info ---- */}
-            {event?.hosts[0]?.name && (
-              <div className="my-4">
-                <EventOrganizerCard
-                  name={event?.hosts[0]?.name}
-                  img={event?.hosts[0]?.memberPhoto?.source}
-                  otherEvents={event?.hosts[0]?.hostedEvents?.edges}
-                />
-              </div>
-            )}
+            {/* ---------------- Drawer Content ---------------- */}
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="outline">Other information</Button>
+              </SheetTrigger>
+              <SheetContent id="sheet-content" className="overflow-y-scroll">
+                <SheetHeader>
+                  <SheetTitle className="text-black">
+                    More Information
+                  </SheetTitle>
 
-            <Separator className="my-4" />
+                  <div className="text-black">
+                    {/* ---- Host Info ---- */}
+                    {event?.hosts[0]?.name && (
+                      <div className="my-4">
+                        <EventOrganizerCard
+                          name={event?.hosts[0]?.name}
+                          img={event?.hosts[0]?.memberPhoto?.source}
+                          otherEvents={event?.hosts[0]?.hostedEvents?.edges}
+                        />
+                      </div>
+                    )}
 
-            {/* ---- Tags ---- */}
-            {event?.topics?.edges.length && (
-              <div className="my-4">
-                <p>Related Topics: </p>
-                <div className="flex flex-wrap gap-2 my-4">
-                  {event?.topics?.edges?.map((topic: any) => (
-                    <EventMiniCard
-                      key={topic?.node?.id}
-                      title={topic?.node?.name}
-                    />
-                  ))}
-                </div>
-              </div>
-            )}
+                    {event?.hosts[0]?.name &&
+                      event?.topics?.edges.length > 0 && (
+                        <Separator className="my-4" />
+                      )}
+
+                    {/* ---- Tags ---- */}
+                    {event?.topics?.edges.length > 0 && (
+                      <div className="my-4">
+                        <p>Related Topics: </p>
+                        <div className="flex flex-wrap gap-2 my-4">
+                          {event?.topics?.edges?.map((topic: any) => (
+                            <EventMiniCard
+                              key={topic?.node?.id}
+                              title={topic?.node?.name}
+                            />
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </SheetHeader>
+              </SheetContent>
+            </Sheet>
           </div>
 
           {/* ------------------------ Description -------------------------- */}

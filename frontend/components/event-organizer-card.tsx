@@ -51,7 +51,6 @@ const EventOrganizerCard = ({
           <Button
             variant="outline"
             key={otherEvt?.node?.id}
-            className="border-blue-700"
             onClick={() => handleEventSearch(otherEvt?.node?.id)}
           >
             {otherEvt?.node?.title.replaceAll("-", " ").slice(0, 12)}...
