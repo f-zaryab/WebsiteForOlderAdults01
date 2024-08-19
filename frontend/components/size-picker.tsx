@@ -27,7 +27,7 @@ const SizePicker = ({ currentSize, handleSize }: SizePickerProps) => {
       id="size-picker"
       className="center-component-alignment gap-0 md:gap-2 lg:gap-8"
     >
-      <h4 className="text-black text-[1em] lg:text-lrg" role="region">
+      <h4 className="text-black text-[1em] lg:text-lrg">
         <TooltipWrapper tooltipMsg="You can change size of website by increasing or decreasing button">
           Change Text Size:
         </TooltipWrapper>
