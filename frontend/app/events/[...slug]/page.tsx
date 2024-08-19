@@ -2,6 +2,7 @@
 import React, { Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
 import ReactMarkdown from "react-markdown";
 // lib
 import {
@@ -19,6 +20,12 @@ import EventMiniCard from "@/components/event-mini-card";
 import EventOrganizerCard from "@/components/event-organizer-card";
 import NavigationBreadcrumbs from "@/components/navigation-breadcrumbs";
 import gqlFetchSpecificEvent from "@/calls/fetchSpecificEvt";
+
+export const metadata: Metadata = {
+  title: "Social Connections: Searched Events Detail",
+  description:
+    "Social Connections: All the details related to event",
+};
 
 const EventDetailPage = async ({ params }: any) => {
   const result = await gqlFetchSpecificEvent(params?.slug);

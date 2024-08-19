@@ -3,12 +3,12 @@ export const themeOptions: string[] = ["grey", "brown", "green", "blue"];
 export const navLinks = [
   {
     id: "01",
-    label: "Home Page",
+    label: "Home page",
     href: "/",
   },
   {
     id: "02",
-    label: "My Events Page",
+    label: "My events page",
     href: "/myevents",
   },
   {
@@ -18,11 +18,29 @@ export const navLinks = [
   },
 ];
 
+export const footerLinks = [
+  {
+    id: "01",
+    label: "About us",
+    href: "/about",
+  },
+  {
+    id: "02",
+    label: "Blogs",
+    href: "/blogs",
+  },
+  {
+    id: "03",
+    label: "Sitemap",
+    href: "/sitemap",
+  },
+];
+
 export const eventCategories = [
   {
     id: "01_travel",
     label: "Travel and Outdoor",
-    href: "/events?search=travel-outdoor",
+    href: "/events?search=travel",
   },
   {
     id: "02_social",

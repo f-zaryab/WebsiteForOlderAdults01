@@ -74,7 +74,7 @@ const EventsList = async ({
 
       {/* --------------- Filters ---------------------------- */}
       <Sheet>
-        <SheetTrigger asChild className="max-w-40 text-black">
+        <SheetTrigger asChild className="max-w-40 text-black" role="button">
           <TooltipWrapper tooltipMsg="You may filter your results by clicking this button named filters">
             <Button variant="outline" className="max-w-40 text-black">
               Filters

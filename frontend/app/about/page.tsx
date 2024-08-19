@@ -19,7 +19,7 @@ const About = () => {
         <div className="w-full h-full">
           <Image
             src={"/herobanner02.jpg"}
-            alt="travel-image"
+            alt="an image showcasing traveling"
             sizes="100vw"
             priority
             width={0}
