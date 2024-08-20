@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import NavigationBreadcrumbs from "@/components/navigation-breadcrumbs";
 
 export const metadata: Metadata = {
-  title: "Social Connections: About Us",
+  title: "Social Connections: Information about us",
   description:
     "Social Connections: Search what type of event you want. We believe in having a large group whenever we socialize. No one should be left behind",
 };

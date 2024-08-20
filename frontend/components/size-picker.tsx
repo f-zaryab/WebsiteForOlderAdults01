@@ -23,7 +23,7 @@ const SizePicker = ({ currentSize, handleSize }: SizePickerProps) => {
   };
 
   return (
-    <aside
+    <section
       id="size-picker"
       className="center-component-alignment gap-0 md:gap-2 lg:gap-8"
     >
@@ -40,7 +40,7 @@ const SizePicker = ({ currentSize, handleSize }: SizePickerProps) => {
           Descrease Size
         </Button>
       </div>
-    </aside>
+    </section>
   );
 };
 

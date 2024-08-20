@@ -99,7 +99,7 @@ const EventCard = ({
           <div className="h-auto w-full overflow-hidden">
             <Image
               src={imageUrl}
-              alt="event-image"
+              alt={`image showcasing event: ${title}`}
               sizes="100vw"
               priority
               width={0}

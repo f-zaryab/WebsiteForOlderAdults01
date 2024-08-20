@@ -32,7 +32,7 @@ interface SearchBoxHeroBannerProps {
 }
 
 const SearchBoxHeroBanner = ({
-  formLabel,
+  formLabel = 'Search event by typing in box below',
   formDescription,
 }: SearchBoxHeroBannerProps) => {
   // Defining Router hook
@@ -62,8 +62,8 @@ const SearchBoxHeroBanner = ({
             control={form.control}
             name="searchQuery"
             render={({ field }) => (
-              <FormItem>
-                {formLabel && <FormLabel>{formLabel}</FormLabel>}
+              <FormItem className="text-black">
+                {formLabel && <FormLabel className="text-lrg font-bold">{formLabel}</FormLabel>}
                 <FormControl>
                   <Input placeholder="Search an event..." {...field} />
                 </FormControl>

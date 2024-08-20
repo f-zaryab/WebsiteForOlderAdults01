@@ -16,7 +16,10 @@ const ColorPicker = ({ themeSelected, themeChange }: ColorPickerProps) => {
   };
 
   return (
-    <aside className="center-component-alignment gap-0 md:gap-2 lg:gap-8" id='color-picker'>
+    <section
+      className="center-component-alignment gap-0 md:gap-2 lg:gap-8"
+      id="color-picker"
+    >
       <h4 className="text-black text-[1em] lg:text-lrg">
         <TooltipWrapper tooltipMsg="You can change colors/theme on website by selection on of the radio buttons on right">
           Theme Selection:
@@ -28,15 +31,20 @@ const ColorPicker = ({ themeSelected, themeChange }: ColorPickerProps) => {
         className="flex gap-4 flex-wrap md:flex-nowrap"
       >
         {themeOptions.map((option) => (
-          <div className="flex  items-center space-x-2" key={option} aria-labelledby="color-picker">
-            <RadioGroupItem value={option} id={option} aria-label={option} />
-            <Label htmlFor={option} className="text-black">
+          <div className="flex  items-center space-x-2" key={option}>
+            <RadioGroupItem
+              value={option}
+              id={option}
+              aria-label={option}
+              aria-labelledby={option}
+            />
+            <Label htmlFor={option} className="text-black" aria-label={option}>
               {option}
             </Label>
           </div>
         ))}
       </RadioGroup>
-    </aside>
+    </section>
   );
 };
 

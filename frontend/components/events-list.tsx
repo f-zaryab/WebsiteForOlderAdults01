@@ -70,11 +70,11 @@ const EventsList = async ({
 
   return (
     <div className="flex flex-col">
-      <h2 className="text-black">Search Results:</h2>
+      <h1 className="text-black">Search Results:</h1>
 
       {/* --------------- Filters ---------------------------- */}
       <Sheet>
-        <SheetTrigger asChild className="max-w-40 text-black" role="button">
+        <SheetTrigger asChild className="max-w-40 text-black" role="dialog" title="Filters">
           <TooltipWrapper tooltipMsg="You may filter your results by clicking this button named filters">
             <Button variant="outline" className="max-w-40 text-black">
               Filters

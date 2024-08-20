@@ -3,7 +3,6 @@ import HeroBannerSecond from "@/components/hero-banner-sec";
 import CategoriesButton from "@/components/categories-button";
 import { eventCategories } from "@/lib/constants";
 
-
 export const metadata: Metadata = {
   title: "Social Connections: Search",
   description: "Social Connections: Search what type of event you want",
@@ -65,7 +64,7 @@ export default async function Home() {
       </main>
 
       {/* ---------------------- Categories of Events --------------------- */}
-      <section
+      <aside
         id="categories"
         className="flex flex-wrap flex-col justify-start items-center gap-8 bg-themeBG/90 w-full p-8"
       >
@@ -84,7 +83,7 @@ export default async function Home() {
             />
           ))}
         </div>
-      </section>
+      </aside>
     </>
   );
 }
