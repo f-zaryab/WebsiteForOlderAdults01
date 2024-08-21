@@ -1,5 +1,13 @@
 "use client";
 
+/*
+MAIN LAYOUT: 
+This is app's main layout. Any element which needs to be repeated is added here. For example, navbar, theme selection, etc.
+Context-API is also wrapped around the main body here. Actual context setup is found in UserDataContext.js
+
+Link: https://react.dev/reference/react/createContext
+*/
+
 import "./globals.css";
 import { Inter, Open_Sans, Roboto_Mono } from "next/font/google";
 import { useState } from "react";
@@ -66,7 +74,7 @@ export default function RootLayout({
 
               {/* --------------------------- Navbar ---------------------------- */}
             </header>
-            
+
             <section className="top-[9.75rem] sml:top-[6rem] mdl:top-[4rem] lg:top-[4.5rem] fixed w-full bg-navFooterBG z-10 shadow-lg">
               <NavMenu />
             </section>

@@ -72,7 +72,7 @@ const EventsList = async ({
     <div className="flex flex-col">
       <h1 className="text-black">Search Results:</h1>
 
-      {/* --------------- Filters ---------------------------- */}
+      {/* --------------- Filters Drawer ---------------------------- */}
       <Sheet>
         <SheetTrigger asChild className="max-w-40 text-black" role="dialog" title="Filters">
           <TooltipWrapper tooltipMsg="You may filter your results by clicking this button named filters">
@@ -81,6 +81,7 @@ const EventsList = async ({
             </Button>
           </TooltipWrapper>
         </SheetTrigger>
+        {/* Drawer content */}
         <SheetContent id="sheet-content" className="overflow-y-scroll">
           <SheetHeader>
             <SheetTitle className="text-black">Filters</SheetTitle>
@@ -139,6 +140,7 @@ const EventsList = async ({
         {paginatedEvents?.length > 0 ? (
           paginatedEvents.map((event: any) => (
             <div key={event?.node?.id} className="h-[32rem]">
+              {/* Event card is client-side rendered component. This is nested inside server-component */}
               <EventCard
                 index={event?.node?.id}
                 title={event?.node?.result?.title}

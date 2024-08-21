@@ -1,7 +1,12 @@
+/*
+SITEMAP PAGE
+a page displaying all the main active pages
+
+Next-Image: https://nextjs.org/docs/app/api-reference/components/image
+*/
+
 import React from "react";
-import Image from "next/image";
 import type { Metadata } from "next";
-import NavigationBreadcrumbs from "@/components/navigation-breadcrumbs";
 import Link from "next/link";
 
 export const metadata: Metadata = {

@@ -1,3 +1,11 @@
+/*
+ABOUT PAGE
+a page displaying simple text and next-image
+
+Next-Image: https://nextjs.org/docs/app/api-reference/components/image
+Next-MetaData: https://nextjs.org/docs/app/building-your-application/optimizing/metadata
+*/
+
 import React from "react";
 import Image from "next/image";
 import type { Metadata } from "next";

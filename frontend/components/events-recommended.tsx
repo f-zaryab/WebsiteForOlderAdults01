@@ -11,6 +11,8 @@ const EventsRecommended = () => {
   const [data, setData] = useState([]);
 
   // Getting random string from the tags array
+  // Tags array are saved in local storage along with event details when user bookmarks it
+  // Keyword search is made on basis of that tag. These tags randomized
   const randomIndex = Math.floor(Math.random() * state?.tags?.length);
   const randomKeyword = state?.tags[randomIndex] || "popular";
 

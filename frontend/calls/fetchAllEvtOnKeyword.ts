@@ -1,7 +1,11 @@
-const gqlFetchAllEventOnKeyword = async (keyword: string, sortField: 'RELEVANCE' | 'DATETIME') => {
+const gqlFetchAllEventOnKeyword = async (
+  keyword: string,
+  sortField: "RELEVANCE" | "DATETIME"
+) => {
   let key = keyword || "popular";
-  let sortFieldType = sortField || 'RELEVANCE'
+  let sortFieldType = sortField || "RELEVANCE";
 
+  // Currently, events with Dundee as center point are only fetched
   let graphql = JSON.stringify({
     query: `{
   keywordSearch(

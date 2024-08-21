@@ -8,6 +8,7 @@ const EventsBookMarked = () => {
   const { state } = useUserData();
   const [finalData, setFinalData] = useState({ events: [], tags: [] });
 
+  // Local storage is being used here: Events are extrcted from local storage and looped in jsx
   useEffect(() => {
     const localStorageData = localStorage?.getItem("userData");
     const stateLS = localStorageData

@@ -1,3 +1,13 @@
+/*
+Event detail Page
+Server-side rendered page which makes use of search params to get query param data and populate events according to it
+
+Next-Dynamic routes: https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes
+Next-Image: https://nextjs.org/docs/app/api-reference/components/image
+Next-MetaData: https://nextjs.org/docs/app/building-your-application/optimizing/metadata
+Next-Suspense: https://nextjs.org/docs/app/building-your-application/routing/loading-ui-and-streaming#what-is-streaming
+*/
+
 // Src
 import React, { Suspense } from "react";
 import Image from "next/image";
@@ -23,8 +33,7 @@ import gqlFetchSpecificEvent from "@/calls/fetchSpecificEvt";
 
 export const metadata: Metadata = {
   title: "Social Connections: Searched Events Detail",
-  description:
-    "Social Connections: All the details related to event",
+  description: "Social Connections: All the details related to event",
 };
 
 const EventDetailPage = async ({ params }: any) => {

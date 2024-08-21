@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   description: "Social Connections: Search what type of event you want",
 };
 
+// Legacy commented code: Kept here for future reference purpose
 // async function getData() {
 //   const res = await fetch(
 //     `https://www.eventbriteapi.com/v3/categories/?token=${process.env.EVENTBRITE_API_KEY}`

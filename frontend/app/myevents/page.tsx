@@ -1,3 +1,8 @@
+/*
+My Events PAGE
+The personlised page which shows bookmarked events and recommended events for the user
+*/
+
 import React from "react";
 import type { Metadata } from "next";
 import EventsBookMarked from "@/components/events-bookmarked";

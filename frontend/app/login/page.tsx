@@ -1,3 +1,9 @@
+/*
+LOGIN PAGE
+A page originally meant to be used but is not being used as the desired functionality is being executed via local-storage
+This page is NO LONGER IN USE. Kept here as a reference and for the future work
+*/
+
 import React from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {

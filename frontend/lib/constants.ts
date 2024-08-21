@@ -75,11 +75,6 @@ export const eventCategories = [
 ];
 
 export const popularSearchOptions = [
-  // {
-  //   id: "upcoming-events",
-  //   label: "Upcoming Events",
-  //   href: "/events?search=upcoming",
-  // },
   {
     id: "popular-events",
     label: "Popular Events",

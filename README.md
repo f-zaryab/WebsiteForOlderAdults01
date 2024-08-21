@@ -12,10 +12,10 @@ The site would be AA compliance as per W3C standards for [older adults](https://
 3. File based routing is utlisied for pages and next link router is used for navigation.
 4. Context-API would be used for managing webapp data for data persistence.
 
-## Backend Section
-
-Any thing outside frontend folder would be part of backend. A main server.js file would be used as entry point of server. The server would be used for managing user data and authentications.
-
 ## Deployment
 
-When the app first version is completed, it would be hosted on any node-based hosting site, e.g. render. Temporarily, fontend is being hosted on versel for availability.
+Web app is deployed on Vercel.
+
+## Additional Information
+
+Reference file (References.md) is also available in the root folder. This file contains references to all the color templates being used and also list the issues encountered during development and links which proved helpful in debugging those

@@ -1,3 +1,13 @@
+/*
+BLOG PAGE
+a page listing different blog items in form of cards. 
+Blog data is at: lib > blogs.ts
+Detail page of blog is for the future scope as it can expanded with more articles
+
+Next-MetaData: https://nextjs.org/docs/app/building-your-application/optimizing/metadata
+Next-Link: https://nextjs.org/docs/app/api-reference/components/link
+*/
+
 import React from "react";
 import type { Metadata } from "next";
 import Image from "next/image";

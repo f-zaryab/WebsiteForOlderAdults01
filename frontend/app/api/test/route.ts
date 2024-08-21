@@ -1,3 +1,11 @@
+/*
+API Route
+Testing api server route in next. 
+Not being utilised, code present and commented for future reference
+
+Next-Route Handler: https://nextjs.org/docs/app/building-your-application/routing/route-handlers
+*/
+
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET() {
